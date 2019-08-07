@@ -130,6 +130,7 @@ namespace Examen
             this.rbAlternativa2.Text = "Controlar la Calidad(Respta)";
             this.rbAlternativa3.Text = "Planificar la Gestión de la Calidad";
             this.rbAlternativa4.Text = "Verificar el Alcance";
+
             seleccion++;
         }
 
