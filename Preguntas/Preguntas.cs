@@ -16,6 +16,10 @@ namespace Examen
         int resultado = 0;
         int seleccion = 0;
 
+        int tiempo = 120;
+        int minuto = 0;
+        int segundo = 0;
+
         public Preguntas()
         {
             InitializeComponent();
@@ -24,7 +28,10 @@ namespace Examen
         {
            Limpiar();
            pregunta1();
-           btnResultados.Visible = false; 
+           btnResultados.Visible = false;
+           Tiempo();
+           
+
         }
         private void Limpiar()
         {
@@ -245,6 +252,39 @@ namespace Examen
         {
             Resultados objresultados = new Resultados();
             objresultados.Show();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            segundo--;
+            if (minuto > 0) {
+                if (segundo < 0) {
+                    segundo = 59;
+                    minuto--;
+                }
+            }
+            lblTiempo.Text = "0" + minuto + ":" + segundo;
+            if (minuto == 0 && segundo == 0)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Termino el tiempo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+        }
+        private void Tiempo() {
+            if (tiempo >= 60)
+            {
+                minuto = tiempo / 60;
+                segundo = tiempo % 60;
+            }
+            else
+            {
+                minuto = 0;
+                segundo = tiempo;
+            }
+            lblTiempo.Text = "0" + minuto + ":" + segundo;
+            timer1.Enabled = true;
+
         }
     }
 }

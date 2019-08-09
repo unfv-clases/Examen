@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.rbAlternativa1 = new System.Windows.Forms.RadioButton();
             this.lblPregunta = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.rbAlternativa3 = new System.Windows.Forms.RadioButton();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnResultados = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +60,7 @@
             this.rbAlternativa1.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAlternativa1.ForeColor = System.Drawing.Color.White;
             this.rbAlternativa1.Location = new System.Drawing.Point(69, 161);
-            this.rbAlternativa1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rbAlternativa1.Margin = new System.Windows.Forms.Padding(5);
             this.rbAlternativa1.Name = "rbAlternativa1";
             this.rbAlternativa1.Size = new System.Drawing.Size(14, 13);
             this.rbAlternativa1.TabIndex = 2;
@@ -80,7 +83,7 @@
             this.rbAlternativa2.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAlternativa2.ForeColor = System.Drawing.Color.White;
             this.rbAlternativa2.Location = new System.Drawing.Point(69, 201);
-            this.rbAlternativa2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rbAlternativa2.Margin = new System.Windows.Forms.Padding(5);
             this.rbAlternativa2.Name = "rbAlternativa2";
             this.rbAlternativa2.Size = new System.Drawing.Size(14, 13);
             this.rbAlternativa2.TabIndex = 4;
@@ -92,7 +95,7 @@
             this.rbAlternativa4.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAlternativa4.ForeColor = System.Drawing.Color.White;
             this.rbAlternativa4.Location = new System.Drawing.Point(69, 295);
-            this.rbAlternativa4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rbAlternativa4.Margin = new System.Windows.Forms.Padding(5);
             this.rbAlternativa4.Name = "rbAlternativa4";
             this.rbAlternativa4.Size = new System.Drawing.Size(14, 13);
             this.rbAlternativa4.TabIndex = 5;
@@ -104,7 +107,7 @@
             this.rbAlternativa3.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAlternativa3.ForeColor = System.Drawing.Color.White;
             this.rbAlternativa3.Location = new System.Drawing.Point(69, 248);
-            this.rbAlternativa3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rbAlternativa3.Margin = new System.Windows.Forms.Padding(5);
             this.rbAlternativa3.Name = "rbAlternativa3";
             this.rbAlternativa3.Size = new System.Drawing.Size(14, 13);
             this.rbAlternativa3.TabIndex = 6;
@@ -138,6 +141,21 @@
             this.btnResultados.UseVisualStyleBackColor = false;
             this.btnResultados.Click += new System.EventHandler(this.BtnResultados_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.White;
+            this.lblTiempo.Location = new System.Drawing.Point(820, 61);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(0, 35);
+            this.lblTiempo.TabIndex = 9;
+            // 
             // Preguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -145,6 +163,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1354, 428);
+            this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.btnResultados);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.rbAlternativa3);
@@ -174,6 +193,8 @@
         private System.Windows.Forms.RadioButton rbAlternativa3;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnResultados;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }
 
